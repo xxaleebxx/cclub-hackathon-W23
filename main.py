@@ -61,8 +61,12 @@ visible.add(player)
 running = True
 
 def update(self):
-    self.rect.x += 1
-    self.rect.y += 1
+    if self.rect.y >= 0 and self.rect.y <= 300:
+        self.rect.y += 10
+    else:
+        self.rect.y -= 10
+    if self.rect.x >= 0 and self.rect.x <= 500:
+        self.rect.x -= 10
 
 while running:
     for event in pygame.event.get():
