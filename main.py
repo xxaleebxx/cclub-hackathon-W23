@@ -60,6 +60,9 @@ visible = pygame.sprite.Group()
 visible.add(player)
 running = True
 
+def update(self):
+    self.rect.x += 1
+    self.rect.y += 1
 
 while running:
     for event in pygame.event.get():
@@ -79,6 +82,10 @@ while running:
             if event.key == pygame.K_d:
                 # D pressed, move us up!
                 player.rect.x += 10
+            if event.key == pygame.K_t:
+                # T pressed, say something
+                print("Hello!")
+        update(player)
 
 
     visible.update()
